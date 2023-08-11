@@ -1,0 +1,84 @@
+body{
+    margin: 8px 10px 8px 10px;
+    background-image: url("bg.jpg") ;
+    height: 100%;
+}
+#block1
+{
+    background-color: rgb(199, 218, 249);
+    border:4px solid black;
+    border-radius: 15px;
+    padding: 1% 2% 20% 2%;
+    margin:2px 8% 15% 8%;
+}
+#block2{
+    background-color: rgb(199, 218, 249);
+    border:5px solid black;
+    border-radius: 20px;
+    padding: 1% 5% 1% 5%;
+    margin:2% 25% 10% 25%;
+
+}
+
+
+#insidebox1,#insidebox2{
+    text-align: center;
+    border:2px solid black;
+    border-radius: 20px;
+    margin: 0px 2px 80px 2px;
+    padding: 2px 5px 2px 5px;
+}
+#insidebox2{
+    margin-bottom: 10px;
+}
+input[type=submit],[type=reset]
+{
+  margin-bottom: 30px;
+width:40%;
+border:10;
+background-color:moyen;
+}
+input,textarea,select{
+width:100%;
+padding: 5px;
+border-radius: 8px;
+}
+.topnav {
+    width: 100%;
+      overflow: hidden;
+      background-color: rgb(199, 205, 205);
+      border: 2px solid rgb(144, 151, 152);
+    }
+    
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #0f0d0d;
+      text-align: center;
+      padding: 10px 10px;
+      height:15px;
+      border: 1.2px solid rgb(255, 254, 254);
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    /* Change color on hover */
+  .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    table{
+      align-items: center;
+      text-align: center;
+      margin:8;
+      }
+      
+      
+      table,td,th{
+        border: 1px solid black ;
+        margin-left: auto;
+        margin-right: auto;
+        padding:10px;
+      }
+      

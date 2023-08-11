@@ -1,0 +1,76 @@
+<?php
+session_start();
+include("connection.php");
+include("functions.php");
+$user_data=get_user_data($con);
+
+?>
+<html>
+    <head>
+        <title>LOGIN</title>
+        <link rel="stylesheet" href="raise.css?v=<?php echo time(); ?>">
+    </head>
+
+<body>
+<div class="topnav">
+    <a href="home.php">HOME</a>
+    <!-- <a href="RegComplaint.php">REGISTER COMPLAINTS</a> -->
+	<a href="RegComplaint.php">STUDENT </a>
+    <!-- <a href="admin.php">ADMIN</a> -->
+    <a href="raise.php">RAISE NEW COMPLAINT</a>
+    <a href="logout.php" style="float:right">SIGN OUT</a>
+  </div><br><br>
+<div>
+
+    <br>
+<div id="block1">
+    <div id="insidebox1">
+       <h2>PREVIOUS COMPLAINTS</h2>
+    </div>
+	<?php
+	// $query="select * from hostel";
+	
+	$query= "SELECT * FROM `Hostel_guide` WHERE Student_id = '".$_SESSION['gstudentID']."'"or die(mysql_error());
+	//$query= mysql_query("SELECT * FROM `hostel` WHERE `Student_id` = '".$_SESSION['gstudentID']."' ")or die(mysql_error());
+	$result=mysqli_query($con,$query);
+	?>
+	<centre>
+	<table>
+		<tr>
+		<th>Name</th>
+			<th>Student ID</th>
+			<!-- <th>Email ID</th>
+			<th>Phone Number</th> -->
+            <th>Hostel</th>
+            <th>Room Number</th>
+            <th>Date</th>
+            <th>Complaint Type</th>
+            <th>Complaint</th>
+		</tr>
+		<?php
+		while($rows=$result->fetch_assoc())
+		{
+			if($rows['Student_id']!='Admin') {
+		?>
+
+		<tr>
+		<td>
+            <?php echo $rows['Name'];?></td>
+			<td><?php echo $rows['Student_id'];?></td>
+			<!-- <td><?php echo $rows['Email'];?></td> -->
+			<!-- <td><?php echo $rows['Phone Number'];?></td> -->
+			<td><?php echo $rows['Hostel'];?></td>
+            <td><?php echo $rows['Room number'];?></td>
+            <td><?php echo $rows['Date'];?></td>
+            <td><?php echo $rows['Complaint type'];?></td>
+            <td><?php echo $rows['Complaint'];?></td>
+		</tr>
+		
+		<?php
+			}
+		}
+		?>
+	</table>
+    </div>
+    </body>
+</html>
